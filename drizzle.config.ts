@@ -1,9 +1,11 @@
-import type {Config} from "drizzle-kit";
+import { defineConfig } from 'drizzle-kit';
 
-export default {
-    schema: "./src/lib/schema.ts",
-    out: "./src/lib/migrations",
-    // Whether to execute each statement in the migrations individually.
-    // Set to true if you are using SQLite or MySQL (as they don't support multiple DDL statements in a transaction).
-    "breakpoints": true
-} satisfies Config;
+if (!process.env.DATABASE_URL) throw new Error('DATABASE_URL is not set');
+
+export default defineConfig({
+	schema: './src/lib/server/db/schema.ts',
+	dbCredentials: { url: process.env.DATABASE_URL },
+	verbose: true,
+	strict: true,
+	dialect: 'sqlite'
+});

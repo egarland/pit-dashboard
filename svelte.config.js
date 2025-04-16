@@ -1,32 +1,15 @@
-import preprocess from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-cloudflare';
-import {vitePreprocess} from '@sveltejs/kit/vite';
+import adapter from '@sveltejs/adapter-static';
 
-/** @type {import('@sveltejs/kit').Config} */
-const config = {
-	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
-	// for more information about preprocessors
-	preprocess: [
-		vitePreprocess(),
-		preprocess({
-			scss: {
-				prependData: '@use "src/variables.scss" as *;'
-			}
-		})
-	],
-
+export default {
 	kit: {
-		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
-		// If your environment is not supported or you settled on a specific environment, switch out the adapter.
-		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter({
-			// https://kit.svelte.dev/docs/adapter-cloudflare#options
-			routes: {
-				include: ['/*'], // defines routes that will invoke a function
-				exclude: ['<all>'] // defines routes that will not invoke a function — this is a faster and cheaper way to serve your app's static assets
-			}
+			// default options are shown. On some platforms
+			// these options are set automatically — see below
+			pages: 'build',
+			assets: 'build',
+			fallback: undefined,
+			precompress: false,
+			strict: false
 		})
 	}
 };
-
-export default config;

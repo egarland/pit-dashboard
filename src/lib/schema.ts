@@ -1,6 +1,5 @@
 import {customType, integer, sqliteTable, text, uniqueIndex} from 'drizzle-orm/sqlite-core';
 import type {InferModel} from "drizzle-orm";
-import type {Oauth1AccessToken} from "$lib/trello";
 
 
 interface ProjectData {
@@ -19,11 +18,6 @@ interface ProjectData {
         // mainAssembly: { did: string, eid: string },
         projectOwnerId: string // onshape user that has access to project
     },
-    trello: {
-        boardId: string,
-        listId: string,
-        token: Oauth1AccessToken,
-    }
 }
 
 // had to create a custom type as the blob type with mode JSON has a buffer encode that makes the
@@ -42,12 +36,6 @@ const dbJson = customType({
 });
 
 
-// A project relates onshape documents with a trello board and access permissions
-export const projectSchema = sqliteTable('projects', {
-    id: integer('id').primaryKey(),
-    name: text('name').notNull(),
-    data: text('data', { mode: 'json' }).notNull().$type<ProjectData>(), //json data
-});
 export type ProjectModel = InferModel<typeof projectSchema>;
 
 

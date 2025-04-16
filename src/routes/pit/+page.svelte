@@ -453,20 +453,10 @@
     zoom: 1.25;
   }
 
-  // #row1 {
-  // 	background-color: red;
-  // }
   #row2 {
-    // background-color: blue;
     flex: 2;
     display: flex;
   }
-
-  // #row3 {
-  // 	background-color: green;
-  // }
-
-  $bionic-green: #ff8708;
 
   .binHeader {
     margin: -30px 10px 10px;
@@ -488,7 +478,7 @@
   }
 
   :global(body) {
-    background-color: $bionic-green !important;
+    background-color: #ff8708 !important;
     background-image: none !important;
     height: 100%;
   }
@@ -498,7 +488,6 @@
     min-height: 100px;
     margin: 5px;
     color: #fff;
-    // overflow: hidden;
     padding: 10px;
   }
 
@@ -558,20 +547,23 @@
     font-size: 1rem; // change this to increase whole page font size
   }
 
-  $footerHeight: 40px;
+
+  :root { 
+	--footerHeight: 40px;
+  }
+
   .sponsorRow {
     margin: 32px;
-    margin-bottom: $footerHeight; /* Margin bottom by footer height */
+    margin-bottom: var(--footerHeight); /* Margin bottom by footer height */
   }
 
   .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: $footerHeight; /* Set the fixed height of the footer here */
-    line-height: $footerHeight; /* Vertically center the text there */
-    // background-color: #f5f5f5;
-    background-color: darken($bionic-green, 5%); //var(--bionic-green);
+    height: var(--footerHeight); /* Set the fixed height of the footer here */
+    line-height: var(--footerHeight); /* Vertically center the text there */
+    background-color: #ff8708;
     color: #666;
     padding-left: 10px;
     padding-right: 10px;
