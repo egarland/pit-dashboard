@@ -45,7 +45,7 @@
 		"bootstrap": "^5.3.5",
 		"drizzle-kit": "^0.30.2",
 		"publint": "^0.3.2",
-		"sass-embedded": "^1.86.3",
+		"sass-embedded": "1.77.5",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"sveltekit-flash-message": "^2.4.6",

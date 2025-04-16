@@ -382,7 +382,7 @@
 		</span>
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
-		<a class="btn btn-link btnicon" href="/pit/config">
+		<a class="btn btn-link btnicon" href="/pit/config" aria-label="pit config button">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="16"
@@ -544,7 +544,7 @@
   :global(html) {
     position: relative;
     min-height: 100%;
-    font-size: 1rem; // change this to increase whole page font size
+    font-size: 1rem; /* change this to increase whole page font size */
   }
 
 

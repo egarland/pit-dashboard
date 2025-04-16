@@ -28,7 +28,7 @@
             <td>{machiningParams.spindleSpeedRPM}</td>
             <td>(rpm)</td>
             <td>
-                <div class="btn btn-outline-primary" on:click={() => {spindleSpeedModalOpen = true;}}>Details</div>
+                <button class="btn btn-outline-primary" on:click={() => {spindleSpeedModalOpen = true;}}>Details</button>
                 <SpindleSpeedModal bind:isOpen={spindleSpeedModalOpen}/>
             </td>
         </tr>
@@ -37,7 +37,7 @@
             <td>{machiningParams.feedRateIPM}</td>
             <td>(inches/min)</td>
             <td>
-                <div class="btn btn-outline-primary" on:click={() => {feedRateModalOpen = true;}}>Details</div>
+                <button class="btn btn-outline-primary" on:keydown={() => {feedRateModalOpen = true;}} on:click={() => {feedRateModalOpen = true;}}>Details</button>
                 <FeedRateModal bind:isOpen={feedRateModalOpen}/>
             </td>
         </tr>
@@ -46,7 +46,7 @@
             <td>{machiningParams.plungeRateIPM}</td>
             <td>(inches/min)</td>
             <td>
-                <div class="btn btn-outline-primary" on:click={() => {plungeFeedRateModalOpen = true;}}>Details</div>
+                <button class="btn btn-outline-primary" on:click={() => {plungeFeedRateModalOpen = true;}}>Details</button>
                 <PlungeFeedRateModal bind:isOpen={plungeFeedRateModalOpen}/>
             </td>
         </tr>
@@ -55,7 +55,7 @@
             <td>{machiningParams.stepOverIn}</td>
             <td>(inches)</td>
             <td>
-                <div class="btn btn-outline-primary" on:click={() => {stepOverModalOpen = true;}}>Details</div>
+                <button class="btn btn-outline-primary" on:click={() => {stepOverModalOpen = true;}}>Details</button>
                 <StepOverModal bind:isOpen={stepOverModalOpen}/>
             </td>
         </tr>
@@ -64,7 +64,7 @@
             <td>{machiningParams.stepDownIn}</td>
             <td>(inches)</td>
             <td>
-                <div class="btn btn-outline-primary" on:click={() => {stepDownModalOpen = true;}}>Details</div>
+                <button class="btn btn-outline-primary" on:click={() => {stepDownModalOpen = true;}}>Details</button>
                 <StepDownModal bind:isOpen={stepDownModalOpen}/>
             </td>
         </tr>
