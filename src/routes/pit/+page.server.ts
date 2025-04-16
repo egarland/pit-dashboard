@@ -1,7 +1,7 @@
 
 import { redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
-import type { NexusEventStatus, StatboticsTeam, StatboticsTeamEvent, StatboticsTeamMatches, StatboticsTeamYear } from './restTypes.d.ts';
+import type { NexusEventStatus, StatboticsTeam, StatboticsTeamEvent, StatboticsTeamMatches, StatboticsTeamYear } from './restTypes';
 //import { NEXUS_API_KEY } from '$env/static/private';
 import { nexusToTBA } from './mapNexusToTBA';
 import { getSimData } from './simdata';
