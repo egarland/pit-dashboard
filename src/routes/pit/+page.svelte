@@ -81,14 +81,14 @@
 </script>
 
 <svelte:head>
-	<title>Bionics Pit Display</title>
+	<title>OK Pit Display</title>
 </svelte:head>
 
 <div class="wrapper">
 	<div class="row mt-4" data-name="Logo and Stats">
 		<div class="col logocol">
 			<a href="/pit/config">
-				<img src="bionics-logo.svg" alt="Bionics Logo" class="logo" style="padding: 10px"/>
+				<img src="logo.svg" alt="Logo" class="logo" style="padding: 10px"/>
 			</a>
 		</div>
 		<div class="col-6">
@@ -422,7 +422,7 @@
 
 <!-- <h1>Pit Display</h1> -->
 <!-- <div class="col">
-	<img src="bionics-logo.svg" alt="Bionics Logo" class="logo" />
+	<img src="bionics-logo.svg" alt="OK Logo" class="logo" />
 </div> -->
 <style lang="scss">
   .logocol {

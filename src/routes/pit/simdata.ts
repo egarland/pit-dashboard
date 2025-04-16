@@ -1,4 +1,4 @@
-import { NexusEventStatus, StatboticsTeamEvent, StatboticsTeamMatches, StatboticsTeamYear } from "./restTypes";
+import type { NexusEventStatus, StatboticsTeamEvent, StatboticsTeamMatches, StatboticsTeamYear } from "./restTypes";
 
 const team = {
     "team": 4909,

@@ -7,7 +7,7 @@
 </script>
 
 <div class="container mt-4">
-	<h1>Welcome to Bionic Tools</h1>
+	<h1>Welcome to OK Tools</h1>
 
 	<div class="wrapper">
 		{#each routes as panel}
