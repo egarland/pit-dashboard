@@ -7,7 +7,7 @@
 </script>
 
 <div class="container mt-4">
-	<h1>Welcome to OK Tools</h1>
+	<h1 class="header">Welcome to OK Tools</h1>
 
 	<div class="wrapper">
 		{#each routes as panel}
@@ -35,4 +35,22 @@
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 	}
+
+  .header {
+    margin: 30px 30px 10px;
+    background: #000000;
+    z-index: 5;
+    position: relative;
+    padding: 8px;
+    border: 3px solid white;
+    text-align: center;
+    color: #f6f6f6;
+  }
+  .form-group {
+    padding: 8px;
+  }
+  .form-control {
+    background-color: #f6f6f6;
+  }
+
 </style>

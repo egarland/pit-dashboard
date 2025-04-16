@@ -479,7 +479,6 @@
 
   :global(body) {
     background-color: #ff8708 !important;
-    background-image: none !important;
     height: 100%;
   }
 
@@ -492,7 +491,7 @@
   }
 
   .bin:before {
-    --bin-corner-size: 8px;
+    --bin-corner-size: 12px;
     --bin-size: calc(2 * var(--bin-corner-size));
 
     min-height: calc(4 * var(--bin-corner-size));
@@ -502,8 +501,8 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: #fff;
-    --bin-width: 3px; /* Adjust the width as needed */
+    background: #f0f0f0;
+    --bin-width: 4px; /* Adjust the width as needed */
     clip-path: polygon(
                     0 var(--bin-size),
                     var(--bin-size) 0,
