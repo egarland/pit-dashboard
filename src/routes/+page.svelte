@@ -46,11 +46,5 @@
     text-align: center;
     color: #f6f6f6;
   }
-  .form-group {
-    padding: 8px;
-  }
-  .form-control {
-    background-color: #f6f6f6;
-  }
 
 </style>

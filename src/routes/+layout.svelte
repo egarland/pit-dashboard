@@ -19,9 +19,9 @@
     :global(body) {
         --color-bg-2: #ffffff;
         --color-bg-0: #ffffff;
-        --color-bg-0: #000000;
-        --color-bg-2: #000000;
+        --color-bg-0: #ff8e17;
         --color-bg-1: #ff8708;
+        --color-bg-2: #ff8708;
         background-attachment: fixed;
         background-color: transparent;
         background-size: 100vw 100vh;

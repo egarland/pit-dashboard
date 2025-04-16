@@ -10,17 +10,20 @@ const getData = async (teamNumber: number, year: number, eventKey: string): Prom
     if (eventKey.toUpperCase().startsWith("SIM")) {
         return getSimData(eventKey);
     }
+    var nexusEventKey = eventKey;
+    if (nexusEventKey == "2025gal") {
+	    nexusEventKey = "2025galileo";
+    }
     return await Promise.all([
         fetch(`https://api.statbotics.io/v3/team_year/${teamNumber}/${year}`).then(res => res.json<StatboticsTeamYear>()),
         fetch(`https://api.statbotics.io/v3/matches?year=${year}&event=${eventKey}`).then(res => res.json<StatboticsTeamMatches>()),
         fetch(`https://api.statbotics.io/v3/team_events?year=${year}&event=${eventKey}&metric=rank&ascending=true`).then(res => res.json<StatboticsTeamEvent>()),
-        fetch(`https://frc.nexus/api/v1/event/${eventKey}`, {
+        fetch(`https://frc.nexus/api/v1/event/${nexusEventKey}`, {
             headers: {
                 "Nexus-Api-Key": NEXUS_API_KEY
             }
         }).then(res => res.json<NexusEventStatus>()),
-        eventKey
-    ]);
+        eventKey]);
 }
 
 const titleCase = (str: string) => {
@@ -49,7 +52,7 @@ export const load = (async ({ params, url }) => {
 
 
 
-    const upcommingMatches = nexusEventStatus.matches
+    const upcommingMatches = (nexusEventStatus.matches || [])
         .filter((m) => m.status != 'On field');
 
 
@@ -224,6 +227,6 @@ export const load = (async ({ params, url }) => {
         rankings: rankingsDisplay,
         ourRanking: rankings.find((t) => t.team == teamNumber),
         lastUpdated: new Date(),
-        nexusEventStatus
+	nexusEventStatus: nexusEventStatus || { matches: [] },
     };
 }) satisfies PageServerLoad;

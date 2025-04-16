@@ -24,7 +24,7 @@
 	<form method="get" action="/pit">
 		<div class="form-group">
 			<h3><label for="eventKeyInput">Event Key:</label></h3>
-			<input type="text" id="eventKeyInput" class="form-control" name="eventKey" />
+			<input type="text" id="eventKeyInput" class="form-control" name="eventKey" value="2025gal"/>
 		</div>
 		<div class="form-group">
 			<h3><label for="teamNumberInput">Team Number:</label></h3>
